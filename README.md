@@ -23,6 +23,18 @@ This repository contains an automated machine learning platform built with **Str
 - **PySpark**: For distributed data processing.
 - **Streamlit**: For the frontend interface.
 
+### 1. Install Dependencies
+- Install the required libraries using the following command:
+    ```bash
+    pip install -r requirements.txt 
+    ```
+### 2. Run the Application:
+- Start the Streamlit app using the command:
+    ```bash
+    streamlit run GUI.py
+    ```
+    Open your web browser and go to http://localhost:PORT_NUMBER to access the platform. Make sure to write the port number.
+
 ## Code Files
 - **`db_conn.py`**: Handles database connections for user authentication and model management.
 - **`dummy_data_generator.py`**: Generates dummy datasets based on user inputs.
