@@ -10,9 +10,18 @@ import dummy_data_generator
 
 spark = SparkSession.builder.appName('Automation').getOrCreate()
 permits = db_conn.get_permits()
+
+db_conn_path = 'db/database.db'
+
+if not os.path.exists(db_conn_path):
+    with open(db_conn_path, 'x') as file:
+        file.write('This file is created because it did not exist before.')
+    print(f"File '{db_conn_path}' has been created.")
+else:
+    print(f"File '{db_conn_path}' already exists.")
+
 conn = sqlite3.connect('db/database.db')
 cursor = conn.cursor()
-
 
 def some_credentials():
     return st.text_input('Enter the name of your data set'), st.selectbox('Tell us about your problem',
